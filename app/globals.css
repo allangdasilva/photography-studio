@@ -1,0 +1,108 @@
+@import "tailwindcss";
+
+:root {
+  /* Colors */
+  --background: #ffffff;
+  --foreground: #171717;
+
+  --white-default: #ffffff;
+  --black-default: #000000
+
+  --gray-1: #e6e6e6;
+  --gray-2: #cccccc;
+  --gray-3: #b3b3b3;
+  --gray-4: #999999;
+  --gray-5: #808080;
+  --gray-6: #666666;
+  --gray-7: #4c4c4c;
+  --gray-8: #333333;
+  --gray-9: #191919;
+
+  --primary-color: #A30318;
+  --secondary-color: #AAAD9A;
+
+  /* Fonts */
+  --fontBodySize: 0.875rem;
+  --fontBodyLineHeight: 1.1428;
+
+  --fontHeadlineSize: 1rem;
+  --fontHeadlineLineHeight: 1.25;
+
+  --fontDisplaySize: 2.25rem;
+  --fontDisplayLineHeight: 1.111;
+}
+
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  --color-white-default: var(--white-default);
+  --color-black-default: var(--black-default);
+  --color-gray-1: var(--gray-1);
+  --color-gray-2: var(--gray-2);
+  --color-gray-3: var(--gray-3);
+  --color-gray-4: var(--gray-4);
+  --color-gray-5: var(--gray-5);
+  --color-gray-6: var(--gray-6);
+  --color-gray-7: var(--gray-7);
+  --color-gray-8: var(--gray-8);
+  --color-gray-9: var(--gray-9);
+
+  --color-primary-color: var(--primary-color);
+  --color-primary-color: var(--secondary-color);
+
+  /* Fonts */
+  --font-workSans: var(--font-work-sans);
+  --font-nyghtSerif: var(--font-nyght-serif);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+@media (width > 640px) {
+  :root {
+    --fontBodySize: 1rem;
+    --fontBodyLineHeight: 1.25;
+
+    --fontHeadlineSize: 1.25rem;
+    --fontHeadlineLineHeight: 1.2;
+
+    --fontDisplaySize: 4rem;
+    --fontDisplayLineHeight: 1;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer utilities {
+  /* Fonts */
+  .fontMenu {
+    @apply font-nyghtSerif font-normal text-gray-1;
+  }
+  .fontBody {
+    @apply font-workSans font-normal text-gray-1;
+    font-size: var(--fontBodySize);
+    line-height: var(--fontBodyLineHeight);
+  }
+  .fontHeadline {
+    @apply font-nyghtSerif font-light text-gray-1;
+    font-size: var(--fontHeadlineSize);
+    line-height: var(--fontHeadlineLineHeight);
+  }
+  .fontDisplay {
+    @apply font-nyghtSerif font-normal text-gray-1;
+    font-size: var(--fontDisplaySize);
+    line-height: var(--fontDisplayLineHeight);
+  }
+  .fontDisplayItalic {
+    @apply italic font-light;
+  }
+}
