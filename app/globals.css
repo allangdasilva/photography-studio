@@ -3,23 +3,15 @@
 :root {
   /* Colors */
   --background: #ffffff;
-  --foreground: #171717;
 
-  --white-default: #ffffff;
-  --black-default: #000000
+  --primaryColor: #a30318;
+  --secondaryColor: #aaad9a;
 
-  --gray-1: #e6e6e6;
-  --gray-2: #cccccc;
-  --gray-3: #b3b3b3;
-  --gray-4: #999999;
-  --gray-5: #808080;
-  --gray-6: #666666;
-  --gray-7: #4c4c4c;
-  --gray-8: #333333;
-  --gray-9: #191919;
-
-  --primary-color: #A30318;
-  --secondary-color: #AAAD9A;
+  --textBodyColor: #333333;
+  --textMenuColor: #ffffff;
+  --textHeadlineColor: #191919;
+  --textDisplayColor: #000000;
+  --formColor: #808080;
 
   /* Fonts */
   --fontBodySize: 0.875rem;
@@ -35,22 +27,15 @@
 @theme inline {
   /* Colors */
   --color-background: var(--background);
-  --color-foreground: var(--foreground);
 
-  --color-white-default: var(--white-default);
-  --color-black-default: var(--black-default);
-  --color-gray-1: var(--gray-1);
-  --color-gray-2: var(--gray-2);
-  --color-gray-3: var(--gray-3);
-  --color-gray-4: var(--gray-4);
-  --color-gray-5: var(--gray-5);
-  --color-gray-6: var(--gray-6);
-  --color-gray-7: var(--gray-7);
-  --color-gray-8: var(--gray-8);
-  --color-gray-9: var(--gray-9);
+  --color-menuColor: var(--textMenuColor);
+  --color-bodyColor: var(--textBodyColor);
+  --color-headlineColor: var(--textHeadlineColor);
+  --color-displayColor: var(--textDisplayColor);
+  --color-formColor: var(--formColor);
 
-  --color-primary-color: var(--primary-color);
-  --color-primary-color: var(--secondary-color);
+  --color-primaryColor: var(--primaryColor);
+  --color-secondaryColor: var(--secondaryColor);
 
   /* Fonts */
   --font-workSans: var(--font-work-sans);
@@ -59,8 +44,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #000000;
+
+    --textBodyColor: #cccccc;
+    --textMenuColor: #000000;
+    --textHeadlineColor: #e6e6e6;
+    --textDisplayColor: #ffffff;
   }
 }
 @media (width > 640px) {
@@ -78,27 +67,26 @@
 
 body {
   background: var(--background);
-  color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
 @layer utilities {
   /* Fonts */
   .fontMenu {
-    @apply font-nyghtSerif font-normal text-gray-1;
+    @apply font-nyghtSerif font-normal text-menuColor;
   }
   .fontBody {
-    @apply font-workSans font-normal text-gray-1;
+    @apply font-workSans font-normal text-bodyColor;
     font-size: var(--fontBodySize);
     line-height: var(--fontBodyLineHeight);
   }
   .fontHeadline {
-    @apply font-nyghtSerif font-light text-gray-1;
+    @apply font-nyghtSerif font-light text-headlineColor;
     font-size: var(--fontHeadlineSize);
     line-height: var(--fontHeadlineLineHeight);
   }
   .fontDisplay {
-    @apply font-nyghtSerif font-normal text-gray-1;
+    @apply font-nyghtSerif font-normal text-displayColor;
     font-size: var(--fontDisplaySize);
     line-height: var(--fontDisplayLineHeight);
   }
