@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
-import { WorkSans, NyghtSerif } from "./ui/fonts";
-import "./globals.css";
+import { WorkSans, NyghtSerif } from "@/app/ui/fonts";
+import "@/app/globals.css";
 
 export const metadata: Metadata = {
   title: "Photography Studio",
