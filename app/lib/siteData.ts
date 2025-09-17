@@ -1,15 +1,17 @@
-export const menuItems = [
+export const menuData = [
   {
+    id: 1,
     label: "Home",
     href: "/",
   },
   {
+    id: 2,
     label: "Contato",
     href: "/contato",
   },
 ];
 
-export const servicesCategory = [
+export const servicesData = [
   {
     id: 1,
     label: "Moda",
