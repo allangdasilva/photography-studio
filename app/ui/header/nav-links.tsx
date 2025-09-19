@@ -1,21 +1,45 @@
-import { usePathname } from "next/navigation";
 import clsx from "clsx";
-import { menuData } from "@/app/lib/siteData";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-export default function NavLinks() {
-  const menuItems = menuData;
+interface NavLinksProps extends React.HTMLAttributes<HTMLDivElement> {
+  textColor: string;
+}
+
+export const menuData = [
+  {
+    id: 1,
+    label: "Home",
+    href: "/",
+  },
+  {
+    id: 2,
+    label: "Contato",
+    href: "/contato",
+  },
+];
+
+export default function NavLinks({ textColor, ...props }: NavLinksProps) {
   const pathname = usePathname();
 
   return (
-    <nav className="max-sm:hidden">
-      <ul className="flex gap-6 fontMenu">
-        {menuItems.map(({ label, href, id }) => (
+    <nav {...props}>
+      <ul
+        className={clsx("flex gap-6 fontNav", {
+          "text-textNavDesktopColor": textColor === "nav-desktop",
+          "text-textNavMobileColor": textColor === "nav-mobile",
+        })}
+      >
+        {menuData.map(({ label, href, id }) => (
           <li key={id}>
             <Link
               className={clsx(
-                "relative block after:absolute after:w-full after:h-[1px] after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 after:origin-left after:bg-menuColor after:transition-transform after:duration-700",
-                { "after:scale-x-100": pathname === href }
+                "relative block after:absolute after:w-full after:h-[1px] after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 focus:after:scale-x-100 after:origin-left  after:transition-transform after:duration-700",
+                {
+                  "after:scale-x-100": pathname === href,
+                  "after:bg-textNavDesktopColor": textColor === "nav-desktop",
+                  "after:bg-textNavMobileColor": textColor === "nav-mobile",
+                }
               )}
               href={href}
             >

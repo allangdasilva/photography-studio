@@ -1,16 +1,3 @@
-export const menuData = [
-  {
-    id: 1,
-    label: "Home",
-    href: "/",
-  },
-  {
-    id: 2,
-    label: "Contato",
-    href: "/contato",
-  },
-];
-
 export const servicesData = [
   {
     id: 1,

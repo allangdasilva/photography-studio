@@ -2,7 +2,7 @@ import { Work_Sans } from "next/font/google";
 import localFont from "next/font/local";
 
 export const WorkSans = Work_Sans({
-  weight: "400",
+  weight: ["400", "500"],
   subsets: ["latin"],
   style: "normal",
   display: "swap",

@@ -7,35 +7,35 @@
   --primaryColor: #a30318;
   --secondaryColor: #aaad9a;
 
+  /* Text */
+  --textBodySize: 0.875rem;
+  --textBodyLineHeight: 1.1428;
   --textBodyColor: #333333;
-  --textMenuColor: #ffffff;
+
+  --textHeadlineSize: 1rem;
+  --textHeadlineLineHeight: 1.25;
   --textHeadlineColor: #191919;
+
+  --textDisplaySize: 2.25rem;
+  --textDisplayLineHeight: 1.111;
   --textDisplayColor: #000000;
-  --formColor: #808080;
 
-  /* Fonts */
-  --fontBodySize: 0.875rem;
-  --fontBodyLineHeight: 1.1428;
-
-  --fontHeadlineSize: 1rem;
-  --fontHeadlineLineHeight: 1.25;
-
-  --fontDisplaySize: 2.25rem;
-  --fontDisplayLineHeight: 1.111;
+  --textFormColor: #808080;
+  --textNavDesktopColor: #ffffff;
+  --textNavMobileColor: #000000;
 }
 
 @theme inline {
   /* Colors */
   --color-background: var(--background);
-
-  --color-menuColor: var(--textMenuColor);
-  --color-bodyColor: var(--textBodyColor);
-  --color-headlineColor: var(--textHeadlineColor);
-  --color-displayColor: var(--textDisplayColor);
-  --color-formColor: var(--formColor);
-
   --color-primaryColor: var(--primaryColor);
   --color-secondaryColor: var(--secondaryColor);
+  --color-textNavDesktopColor: var(--textNavDesktopColor);
+  --color-textNavMobileColor: var(--textNavMobileColor);
+  --color-textBodyColor: var(--textBodyColor);
+  --color-textHeadlineColor: var(--textHeadlineColor);
+  --color-textDisplayColor: var(--textDisplayColor);
+  --color-textFormColor: var(--textFormColor);
 
   /* Fonts */
   --font-workSans: var(--font-work-sans);
@@ -47,21 +47,22 @@
     --background: #000000;
 
     --textBodyColor: #cccccc;
-    --textMenuColor: #000000;
+    --textNavDesktopColor: #000000;
+    --textNavMobileColor: #ffffff;
     --textHeadlineColor: #e6e6e6;
     --textDisplayColor: #ffffff;
   }
 }
 @media (width > 640px) {
   :root {
-    --fontBodySize: 1rem;
-    --fontBodyLineHeight: 1.25;
+    --textBodySize: 1rem;
+    --textBodyLineHeight: 1.25;
 
-    --fontHeadlineSize: 1.25rem;
-    --fontHeadlineLineHeight: 1.2;
+    --textHeadlineSize: 1.25rem;
+    --textHeadlineLineHeight: 1.2;
 
-    --fontDisplaySize: 4rem;
-    --fontDisplayLineHeight: 1;
+    --textDisplaySize: 4rem;
+    --textDisplayLineHeight: 1;
   }
 }
 
@@ -72,21 +73,21 @@ body {
 
 @layer utilities {
   /* Fonts */
-  .fontMenu {
-    @apply font-nyghtSerif font-normal text-menuColor;
+  .fontNav {
+    @apply font-nyghtSerif font-normal;
   }
   .fontBody {
-    @apply font-workSans font-normal text-bodyColor;
+    @apply font-workSans font-normal text-textBodyColor;
     font-size: var(--fontBodySize);
     line-height: var(--fontBodyLineHeight);
   }
   .fontHeadline {
-    @apply font-nyghtSerif font-light text-headlineColor;
+    @apply font-nyghtSerif font-light text-textHeadlineColor;
     font-size: var(--fontHeadlineSize);
     line-height: var(--fontHeadlineLineHeight);
   }
   .fontDisplay {
-    @apply font-nyghtSerif font-normal text-displayColor;
+    @apply font-nyghtSerif font-normal text-textDisplayColor;
     font-size: var(--fontDisplaySize);
     line-height: var(--fontDisplayLineHeight);
   }
