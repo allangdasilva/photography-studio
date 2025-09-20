@@ -16,7 +16,10 @@ export default function Header() {
       <NavLinks textColor="nav-desktop" className="hidden min-sm:block" />
 
       {/* Logo */}
-      <Link href={"/"}>
+      <Link
+        className="hover:scale-95 focus:scale-95 transition-transform duration-700"
+        href={"/"}
+      >
         <Image
           src={"/images/logo-p-photography-studio-white.svg"}
           width={43}
