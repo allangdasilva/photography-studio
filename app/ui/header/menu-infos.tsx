@@ -44,7 +44,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         aria-hidden="true"
         tabIndex={-1}
         className={clsx(
-          "fixed w-full h-screen top-0 left-0 pointer-events-none transition-transform duration-700 ease-out bg-black/50 dark:bg-white/20",
+          "fixed w-full h-screen top-0 left-0 transition-transform duration-700 ease-out bg-black/50 dark:bg-white/20",
           {
             "translate-x-full": !isOpen,
             "translate-x-0": isOpen,
@@ -124,14 +124,15 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
 
             <li className="col-start-2 col-end-5">
               <ul className="grid grid-cols-3 gap-3 min-sm:gap-5">
-                {menuGallery.map(({ src, width, height, id }) => (
+                {menuGallery.map(({ src, width, height, alt, id }) => (
                   <li key={id}>
                     <div className="flex items-center aspect-square overflow-hidden">
                       <Image
                         src={src}
                         width={width}
                         height={height}
-                        alt={"Ensaio livre (fotos em preto e branco)"}
+                        alt={alt}
+                        sizes="80vw"
                       />
                     </div>
                   </li>
