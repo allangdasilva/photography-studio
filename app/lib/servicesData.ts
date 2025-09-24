@@ -1,7 +1,8 @@
 export const servicesData = [
   {
     id: 1,
-    label: "Moda",
+    label: "moda",
+    thumbnail: "/images/moda/moda-2.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, aut. Soluta quo quaerat repellendus repudiandae deserunt. Facere quidem at libero ipsam odit culpa, ea quae minima animi. Autem, consequuntur culpa.",
     details: {
@@ -17,7 +18,8 @@ export const servicesData = [
   },
   {
     id: 2,
-    label: "Casamento",
+    label: "casamento",
+    thumbnail: "/images/casamento/casamento-1.jpg",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio accusantium nihil nemo cum numquam quod cumque facere dolores corrupti laborum fugit quae, qui, eveniet dolorum nostrum harum omnis cupiditate natus!",
     details: {
@@ -33,7 +35,8 @@ export const servicesData = [
   },
   {
     id: 3,
-    label: "Corporativo",
+    label: "corporativo",
+    thumbnail: "/images/corporativo/corporativo-1.jpg",
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quasi, aliquam vero numquam consectetur accusantium magni dicta debitis totam, repellendus perspiciatis praesentium natus cupiditate adipisci accusamus omnis eveniet quia ad.",
     details: {
@@ -49,7 +52,8 @@ export const servicesData = [
   },
   {
     id: 4,
-    label: "Livre",
+    label: "livre",
+    thumbnail: "/images/livre/livre-1.jpg",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi tempore veniam dolores nam laboriosam explicabo blanditiis doloremque delectus facilis. Vel quae repudiandae suscipit soluta accusantium fugit ipsum laborum id quos.",
     details: {

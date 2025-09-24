@@ -44,7 +44,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         aria-hidden="true"
         tabIndex={-1}
         className={clsx(
-          "fixed w-full h-screen top-0 left-0 transition-transform duration-700 ease-out bg-black/50 dark:bg-white/20",
+          "fixed w-full h-screen top-0 left-0 z-40 transition-transform duration-700 ease-out bg-black/50 dark:bg-white/20",
           {
             "translate-x-full": !isOpen,
             "translate-x-0": isOpen,
@@ -59,7 +59,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         role="dialog"
         aria-modal={isOpen}
         className={clsx(
-          "fixed overflow-auto top-0 right-0 w-full h-screen bg-background min-sm:w-3/5 min-lg:w-2/5 transition-transform duration-700 ease-out scrollbarMenuInfos",
+          "fixed overflow-auto top-0 right-0 w-full h-screen bg-background z-50 min-sm:w-3/5 min-lg:w-2/5 transition-transform duration-700 ease-out scrollbarMenuInfos",
           { "translate-x-full": !isOpen, "translate-x-0": isOpen }
         )}
       >
@@ -132,7 +132,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
                         width={width}
                         height={height}
                         alt={alt}
-                        sizes="80vw"
+                        sizes="40vw"
                       />
                     </div>
                   </li>

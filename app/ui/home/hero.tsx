@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Hero() {
   return (
-    <section className="absolute top-0 left-0 flex items-center justify-center w-full bg-gradient-to-b pt-36 pb-[72px] from-primaryColor to-secondaryColor -z-10">
+    <section className="flex items-center justify-center w-full bg-gradient-to-b pt-36 pb-[72px] from-primaryColor to-secondaryColor -z-10">
       <div className="px-6">
         <div className="relative flex justify-center px-14 min-sm:px-28">
           <div className="max-h-[452px] aspect-[11/16]">

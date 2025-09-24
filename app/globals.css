@@ -78,18 +78,18 @@ body {
   }
   .fontBody {
     @apply font-workSans font-normal text-textBodyColor;
-    font-size: var(--fontBodySize);
-    line-height: var(--fontBodyLineHeight);
+    font-size: var(--textBodySize);
+    line-height: var(--textBodyLineHeight);
   }
   .fontHeadline {
     @apply font-nyghtSerif font-light text-textHeadlineColor;
-    font-size: var(--fontHeadlineSize);
-    line-height: var(--fontHeadlineLineHeight);
+    font-size: var(--textHeadlineSize);
+    line-height: var(--textHeadlineLineHeight);
   }
   .fontDisplay {
     @apply font-nyghtSerif font-normal text-textDisplayColor;
-    font-size: var(--fontDisplaySize);
-    line-height: var(--fontDisplayLineHeight);
+    font-size: var(--textDisplaySize);
+    line-height: var(--textDisplayLineHeight);
   }
   .fontDisplayItalic {
     @apply italic font-light;
@@ -111,5 +111,12 @@ body {
   .scrollbarMenuInfos {
     scrollbar-width: thin;
     scrollbar-color: #888 #fff;
+  }
+
+  .clipPathServices {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+  .clipPathServicesHover {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 100% 100%);
   }
 }

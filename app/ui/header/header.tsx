@@ -11,7 +11,7 @@ export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="grid grid-cols-5 gap-5 p-6 min-sm:grid-cols-12">
+    <header className="absolute top-0 left-0 w-full grid grid-cols-5 gap-5 p-6 min-sm:grid-cols-12">
       {/* Nav */}
       <NavLinks
         textColor="nav-desktop"

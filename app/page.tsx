@@ -1,5 +1,6 @@
 import Header from "@/app/ui/header/header";
-import Hero from "./ui/home/hero";
+import Hero from "@/app/ui/home/hero";
+import Services from "@/app/ui/home/services";
 
 export default function Home() {
   return (
@@ -7,6 +8,7 @@ export default function Home() {
       <Header />
       <main>
         <Hero />
+        <Services />
       </main>
     </>
   );
