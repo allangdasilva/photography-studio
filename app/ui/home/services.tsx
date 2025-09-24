@@ -8,20 +8,20 @@ const clipPath =
 export default function Services() {
   return (
     <section className="p-6 text-center min-sm:p-12 bg-background">
+      <h2 className="fontHeadline">Serviços</h2>
       <div className="max-w-[1280px] m-auto">
-        <span className="fontHeadline">Serviços</span>
-        <h2 className="fontDisplay uppercase pt-3 pb-6 min-sm:pt-6 min-sm:pb-12">
+        <h3 className="fontDisplay uppercase pt-3 pb-6 min-sm:pt-6 min-sm:pb-12">
           Somos Fotógrafos
           <br />
           <span className="fontDisplayItalic">Apaixonados</span>
-        </h2>
+        </h3>
         <div className="grid gap-5 min-sm:grid-cols-2 min-lg:grid-cols-4">
           {servicesData.map(({ label, thumbnail, id }) => (
             <Link
               key={id}
               href={`/servicos/${label}`}
               style={{ backgroundImage: `url('${thumbnail}')` }}
-              className={`relative bg-cover bg-center w-full aspect-[10/16] flex items-end justify-end overflow-hidden group`}
+              className={`relative bg-cover bg-center w-full aspect-[11/16] group`}
             >
               <div
                 aria-hidden="true"
