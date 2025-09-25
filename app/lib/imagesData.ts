@@ -44,3 +44,26 @@ export const menuGallery = [
     alt: "Foto de uma jovem mulher com pele clara e cabelos longos, sentada em uma posição casual, vestindo uma blusa preta e calças estilo jeans, em uma foto em preto e branco.",
   },
 ];
+
+export const projectsGallery = [
+  {
+    id: 1,
+    bg: {
+      url: "/images/projetos/projeto-1-1.jpg",
+    },
+    thumb: "/images/projetos/projeto-1-2.jpg",
+    width: 2401,
+    height: 3601,
+    alt: "Homem sentado em loja de roupas com camiseta verde e preta e tênis branco, usando fones de ouvido, ao lado de roupas coloridas na parede.",
+  },
+  {
+    id: 2,
+    bg: {
+      url: "/images/projetos/projeto-2-1.jpg",
+    },
+    thumb: "/images/projetos/projeto-2-2.jpg",
+    width: 2401,
+    height: 3001,
+    alt: "Mulher com cabelo curto e escuro segurando um buquê de flores coloridas, com expressão confiante, usando blazer bege e fundo vermelho.",
+  },
+];

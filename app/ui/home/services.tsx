@@ -25,7 +25,7 @@ export default function Services() {
             >
               <div
                 aria-hidden="true"
-                className="absolute top-0 right-0 w-full h-full bg-black/50 z-10 group-hover:bg-black/0 group-focus:bg-black/0 transition-colors duration-700"
+                className="absolute top-0 right-0 w-full h-full bg-black/20 z-10 group-hover:bg-black/0 group-focus:bg-black/0 transition-colors duration-700 min-md:bg-black/40"
               ></div>
               <div
                 aria-hidden="true"
