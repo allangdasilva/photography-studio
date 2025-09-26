@@ -1,5 +1,4 @@
 import { projectsGallery } from "@/app/lib/imagesData";
-import clsx from "clsx";
 import Image from "next/image";
 
 export default function Projects() {
@@ -21,20 +20,16 @@ export default function Projects() {
                 }}
                 className="w-full aspect-square bg-center bg-cover row-start-1 col-span-full grayscale-100 group-hover:grayscale-100 transition-normal duration-700 min-md:grayscale-0"
               ></div>
-              <Image
-                className={clsx(
-                  "row-start-1 col-start-3 col-end-5 self-center aspect-[11/16] object-cover z-10 min-md:rotate-0",
-                  {
-                    "origin-top-left rotate-4": id === 1,
-                    "origin-top-right -rotate-4": id === 2,
-                  }
-                )}
-                src={thumb}
-                width={width}
-                height={height}
-                alt={alt}
-                sizes="(max-width: 768px) 100vw, 50vw"
-              />
+              <div className="row-start-1 col-start-3 col-end-5 self-center aspect-[11/16] overflow-hidden z-10">
+                <Image
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                  src={thumb}
+                  width={width}
+                  height={height}
+                  alt={alt}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           ))}
         </div>

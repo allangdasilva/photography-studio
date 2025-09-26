@@ -94,6 +94,9 @@ body {
   .fontDisplayItalic {
     @apply italic font-light;
   }
+  .fontDetail {
+    @apply font-workSans font-normal text-textBodyColor text-xs leading-4;
+  }
 
   /* ScrollbarMenuInfos */
   .scrollbarMenuInfos::-webkit-scrollbar {
