@@ -1,6 +1,8 @@
 import clsx from "clsx";
 import Image from "next/image";
 
+interface studioInfosProps extends React.HTMLAttributes<HTMLUListElement> {}
+
 const studioInfosData = [
   {
     content: "Av. Algum Lugar. 0000 - Bairro - Cidade - SP",
@@ -34,13 +36,13 @@ const studioInfosData = [
   },
 ];
 
-export default function StudioInfos() {
+export default function StudioInfos({ ...props }: studioInfosProps) {
   return (
-    <ul className="grid grid-cols-5 pt-10 pb-6">
+    <ul {...props}>
       <li className="hidden" aria-hidden="true"></li>
 
       <li className="col-start-2 col-end-5">
-        <ul className="flex flex-col gap-9">
+        <ul className="flex flex-col gap-4 min-sm:gap-9">
           {studioInfosData.map(({ content, link, icon }, index) => (
             <li className="fontBody" key={index}>
               <div className="flex gap-3">

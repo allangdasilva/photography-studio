@@ -87,7 +87,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
 
         {/* Logo */}
         <Link
-          className="block ml-6 mr-6 hover:scale-95 focus:scale-95 transition-transform duration-700"
+          className="block ml-6 mr-6 hover:scale-95 focus:scale-95 transition-transform duration-400"
           href={"/"}
         >
           <Image
@@ -145,7 +145,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         </div>
 
         {/* StudioInfos */}
-        <StudioInfos />
+        <StudioInfos className="grid grid-cols-5 pt-10 pb-6" />
       </div>
     </>
   );

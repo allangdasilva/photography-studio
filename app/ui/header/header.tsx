@@ -20,7 +20,7 @@ export default function Header() {
 
       {/* Logo */}
       <Link
-        className="col-start-1 col-end-3 hover:scale-95 focus:scale-95 transition-transform duration-700
+        className="col-start-1 col-end-3 hover:scale-95 focus:scale-95 transition-transform duration-400
         min-sm:col-start-6 min-sm:col-end-8 min-sm:justify-self-center"
         href={"/"}
       >

@@ -5,7 +5,7 @@ export default function Testimonial() {
   return (
     <section
       aria-labelledby="testimonial-title"
-      className="px-6 py-[52px] min-sm:py-[92px]"
+      className="px-6 py-[52px] bg-background min-sm:py-[92px]"
     >
       <h2 id="testimonial-title" className="sr-only">
         Depoimentos de clientes
