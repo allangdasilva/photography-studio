@@ -3,7 +3,7 @@ import StudioInfos from "./studio-infos";
 
 export default function Contact() {
   return (
-    <section className="p-6 min-sm:p-12 min-sm:pb-24 bg-background">
+    <section className="p-6 pb-20 min-sm:p-12 min-sm:pb-24 bg-background">
       <div className="max-w-[1280px] m-auto">
         <h2 className="fontHeadline">Contate-nos</h2>
         <div className="min-lg:grid min-lg:grid-cols-2">
