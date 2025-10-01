@@ -1,4 +1,4 @@
-export const servicesData = [
+export const categoriesData = [
   {
     id: 1,
     label: "moda",

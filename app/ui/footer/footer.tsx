@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="p-6 pt-0 min-sm:pt-6 bg-background">
+    <footer className="p-6 pt-0 bg-background">
       <div className="max-w-[1280px] m-auto grid gap-6">
-        <hr className="border-black/5 dark:border-white/5" />
+        <hr className="border-black/15 dark:border-white/15" />
         <div className="space-y-3 min-sm:flex min-sm:justify-between min-sm:flex-row-reverse min-sm:space-y-0">
           <SocialsFooter />
           <p className="fontBody text-center opacity-80">

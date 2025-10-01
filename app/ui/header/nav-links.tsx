@@ -27,7 +27,8 @@ export default function NavLinks({ textColor, ...props }: NavLinksProps) {
       <ul
         className={clsx("flex gap-6 fontNav", {
           "text-textNavDesktopColor": textColor === "nav-desktop",
-          "text-textNavMobileColor": textColor === "nav-mobile",
+          "text-textNavMobileColor":
+            textColor === "nav-mobile" || pathname !== "/",
         })}
       >
         {menuData.map(({ label, href, id }) => (
@@ -38,7 +39,8 @@ export default function NavLinks({ textColor, ...props }: NavLinksProps) {
                 {
                   "after:scale-x-100": pathname === href,
                   "after:bg-textNavDesktopColor": textColor === "nav-desktop",
-                  "after:bg-textNavMobileColor": textColor === "nav-mobile",
+                  "after:bg-textNavMobileColor":
+                    textColor === "nav-mobile" || pathname !== "/",
                 }
               )}
               href={href}

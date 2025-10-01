@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { WorkSans, NyghtSerif } from "@/app/ui/fonts";
 import "@/app/globals.css";
+import Header from "./ui/header/header";
+import Footer from "./ui/footer/footer";
 
 export const metadata: Metadata = {
   title: "Photography Studio",
@@ -17,7 +19,9 @@ export default function RootLayout({
       <body
         className={`${WorkSans.variable} ${NyghtSerif.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

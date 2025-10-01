@@ -10,7 +10,7 @@ const equipment = [
 
 export default function About() {
   return (
-    <section className="p-6 min-sm:p-12 bg-background">
+    <section className="p-6 min-sm:py-12 bg-background">
       <h2 className="text-center fontHeadline">Sobre</h2>
 
       <div className="max-w-[1280px] m-auto min-lg:grid min-lg:grid-cols-12 min-sm:gap-5">
