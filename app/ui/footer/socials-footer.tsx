@@ -21,7 +21,7 @@ export default function SocialsFooter() {
         <a
           key={id}
           href={href}
-          className="fontNav text-textNavMobileColor capitalize relative block after:absolute after:w-full after:h-[1px] after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 focus:after:scale-x-100 after:origin-left after:bg-textNavMobileColor after:transition-transform after:duration-700"
+          className="fontNav text-textNavMobileColor capitalize relative block after:absolute after:w-full after:h-[1px] after:bottom-0 after:left-0 after:scale-x-0 hover:after:scale-x-100 focus-visible:after:scale-x-100 after:origin-left after:bg-textNavMobileColor after:transition-transform after:duration-700"
         >
           {label}
         </a>

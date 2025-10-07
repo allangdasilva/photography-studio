@@ -45,28 +45,117 @@ export const menuGallery = [
   },
 ];
 
-export const projectsGallery = [
-  {
-    id: 1,
-    bg: {
-      url: "/images/projetos/projeto-1-1.jpg",
+export const firstProject = {
+  projectOrder: 1,
+  bgUrl: "/images/projetos/projeto-1-1.jpg",
+  gallery: [
+    {
+      id: 1,
+      src: "/images/projetos/projeto-1-1.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro sorrindo usando um colar, com iluminação quente, estilo vintage e com efeito desfocado.",
     },
-    thumb: "/images/projetos/projeto-1-2.jpg",
-    width: 2401,
-    height: 3601,
-    alt: "Foto de um homem sentado em loja de roupas com camiseta verde e preta e tênis branco, usando fones de ouvido, ao lado de roupas coloridas na parede.",
-  },
-  {
-    id: 2,
-    bg: {
-      url: "/images/projetos/projeto-2-1.jpg",
+    {
+      id: 2,
+      src: "/images/projetos/projeto-1-2.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro usando uma faixa de renda floral sobre os olhos, com iluminação quente, estilo vintage.",
     },
-    thumb: "/images/projetos/projeto-2-2.jpg",
-    width: 2401,
-    height: 3001,
-    alt: "Foto de uma mulher com cabelo curto e escuro segurando um buquê de flores coloridas, com expressão confiante, usando blazer bege e fundo vermelho.",
-  },
-];
+    {
+      id: 3,
+      src: "/images/projetos/projeto-1-3.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro segurando telefone antigo em um espelho decorado, com iluminação quente, estilo vintage.",
+    },
+    {
+      id: 4,
+      src: "/images/projetos/projeto-1-4.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro e vestido branco, segurando telefone antigo vermelho na orelha, ao lado de espelho decorativo na parede.",
+    },
+    {
+      id: 5,
+      src: "/images/projetos/projeto-1-5.jpg",
+      width: 3600,
+      height: 2400,
+      alt: "Foto de uma mulher usando blusa branca falando ao telefone antigo vermelho enquanto olha no espelho, refletindo seu rosto.",
+    },
+    {
+      id: 6,
+      src: "/images/projetos/projeto-1-6.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro preso em um coque bagunçado, sorrindo suavemente, usando vestido de renda branco, posando diante de um fundo com plantas verdes, com iluminação quente, estilo vintage.",
+    },
+    {
+      id: 7,
+      src: "/images/projetos/projeto-1-7.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro, usando vestido de renda branco, segurando telefone vermelho antigo e posando ao lado de um espelho decorado com moldura dourada.",
+    },
+    {
+      id: 8,
+      src: "/images/projetos/projeto-1-8.jpg",
+      width: 2400,
+      height: 3600,
+      alt: "Foto de uma mulher com cabelo escuro e vestido de renda branco posando em ambiente com iluminação amarelada, refletindo no espelho e criando uma atmosfera íntima.",
+    },
+  ],
+};
+
+export const secondProject = {
+  projectOrder: 2,
+  bgUrl: "/images/projetos/projeto-2-1.jpg",
+  gallery: [
+    {
+      id: 1,
+      src: "/images/projetos/projeto-2-1.jpg",
+      width: 2400,
+      height: 3198,
+      alt: "Foto de uma mulher com cabelo escuro usando faixa rosa no cabelo, vestindo roupa rosa, segurando um batom, com um leve sorriso.",
+    },
+    {
+      id: 2,
+      src: "/images/projetos/projeto-2-2.jpg",
+      width: 2400,
+      height: 3198,
+      alt: "Foto de uma mulher com cabelo escuro usando blusa rosa com detalhes florais e acessórios dourados, posando próxima a uma cadeira azul.",
+    },
+    {
+      id: 3,
+      src: "/images/projetos/projeto-2-3.jpg",
+      width: 2400,
+      height: 3198,
+      alt: "Foto de uma mulher com cabelo escuro, usando acessórios dourados, um vestido rosa com detalhes em renda, e um laço rosa na cabeça.",
+    },
+    {
+      id: 4,
+      src: "/images/projetos/projeto-2-4.jpg",
+      width: 2400,
+      height: 3198,
+      alt: "Foto de pernas femininas com meia até a coxa e sapatilhas rosa, no estilo fashion and ballet, destacando moda moderna.",
+    },
+    {
+      id: 5,
+      src: "/images/projetos/projeto-2-5.jpg",
+      width: 3600,
+      height: 2198,
+      alt: "Foto de uma mulher jovem com cabelo escuro, usando laço rosa na cabeça, vestido rosa e colar de corrente, sorrindo para a câmera.",
+    },
+    {
+      id: 6,
+      src: "/images/projetos/projeto-2-6.jpg",
+      width: 2400,
+      height: 3198,
+      alt: "Foto de uma mulher com cabelo escuro, usando laço rosa na cabeça, se maquiando, com foco na maquiagem e beleza.",
+    },
+  ],
+};
 
 export const categoriesGallery = [
   {

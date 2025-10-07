@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // ClipPath Categories bg
 const clipPath =
-  "[clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] group-hover:[clip-path:polygon(100%_0,_100%_0,_100%_100%,_100%_100%)] group-focus:[clip-path:polygon(100%_0,_100%_0,_100%_100%,_100%_100%)]";
+  "[clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] group-hover:[clip-path:polygon(100%_0,_100%_0,_100%_100%,_100%_100%)] group-focus-visible:[clip-path:polygon(100%_0,_100%_0,_100%_100%,_100%_100%)]";
 
 export default function Categories() {
   return (
@@ -25,7 +25,7 @@ export default function Categories() {
             >
               <div
                 aria-hidden="true"
-                className="absolute top-0 right-0 w-full h-full bg-black/20 z-10 group-hover:bg-black/0 group-focus:bg-black/0 transition-colors duration-700 min-md:bg-black/40"
+                className="absolute top-0 right-0 w-full h-full bg-black/20 z-10 group-hover:bg-black/0 group-focus-visible:bg-black/0 transition-colors duration-700 min-md:bg-black/40"
               ></div>
               <div
                 aria-hidden="true"

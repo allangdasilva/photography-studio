@@ -9,6 +9,8 @@ import NavLinks from "@/app/ui/header/nav-links";
 import StudioInfos from "@/app/ui/studio-infos";
 import { menuGallery } from "@/app/lib/imagesData";
 import useCloseMenuInfos from "@/app/hooks/useCloseMenuInfos";
+import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
+import HoverGallery from "../hover-gallery";
 
 interface MenuInfoProps extends React.HTMLAttributes<HTMLDivElement> {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -17,6 +19,7 @@ interface MenuInfoProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
   const menuRef = React.useRef<HTMLDivElement>(null);
+  const [fancyboxRef] = useFancyboxDefault();
 
   // tabIndex
   React.useEffect(() => {
@@ -44,7 +47,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         aria-hidden="true"
         tabIndex={-1}
         className={clsx(
-          "fixed w-full h-screen top-0 left-0 z-40 transition-transform duration-700 ease-out bg-black/50 dark:bg-white/20",
+          "fixed w-full h-screen top-0 left-0 z-40 transition-transform duration-700 ease-out bg-white/50 dark:bg-black/50",
           {
             "translate-x-full": !isOpen,
             "translate-x-0": isOpen,
@@ -74,11 +77,11 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
             >
               <span
                 aria-hidden={true}
-                className="absolute block w-full h-[1px] rotate-45 bg-textNavMobileColor  group-hover:scale-x-75 group-focus:scale-x-75"
+                className="absolute block w-full h-[1px] rotate-45 bg-textNavMobileColor  group-hover:scale-x-75 group-focus-visible:scale-x-75"
               ></span>
               <span
                 aria-hidden={true}
-                className="absolute block w-full h-[1px] -rotate-45 bg-textNavMobileColor  group-hover:scale-x-75 group-focus:scale-x-75"
+                className="absolute block w-full h-[1px] -rotate-45 bg-textNavMobileColor  group-hover:scale-x-75 group-focus-visible:scale-x-75"
               ></span>
             </Button>
           </div>
@@ -87,7 +90,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
 
         {/* Logo */}
         <Link
-          className="block ml-6 mr-6 hover:scale-95 focus:scale-95 transition-transform duration-400"
+          className="block ml-6 mr-6 hover:scale-95 focus-visible:scale-95 transition-transform duration-400"
           href={"/"}
         >
           <Image
@@ -110,7 +113,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         <div className="text-center p-6 pb-3 pt-10 min-sm:pb-5">
           <h2 className="fontHeadline">Instagram</h2>
           <a
-            className="fontBody hover:text-primaryColor focus:text-primaryColor transition-colors duration-300"
+            className="fontBody hover:text-primaryColor focus-visible:text-primaryColor transition-colors duration-300"
             href="#"
           >
             @photography
@@ -123,18 +126,29 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
             <li className="hidden" aria-hidden="true"></li>
 
             <li className="col-start-2 col-end-5">
-              <ul className="grid grid-cols-3 gap-3 min-sm:gap-5">
+              <ul
+                ref={fancyboxRef}
+                className="grid grid-cols-3 gap-3 min-sm:gap-5"
+              >
                 {menuGallery.map(({ src, width, height, alt, id }) => (
                   <li key={id}>
-                    <div className="flex items-center aspect-square overflow-hidden">
+                    <button
+                      type="button"
+                      aria-haspopup="dialog"
+                      data-fancybox="gallery-menu-infos"
+                      data-src={src}
+                      className="relative flex items-center aspect-square cursor-pointer overflow-hidden group"
+                    >
                       <Image
+                        className="group-hover:scale-105 group-focus-visible:scale-105 transition-transform duration-700"
                         src={src}
                         width={width}
                         height={height}
                         alt={alt}
                         sizes="40vw"
                       />
-                    </div>
+                      <HoverGallery />
+                    </button>
                   </li>
                 ))}
               </ul>

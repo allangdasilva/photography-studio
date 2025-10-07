@@ -1,7 +1,12 @@
-import { projectsGallery } from "@/app/lib/imagesData";
-import Image from "next/image";
+"use client";
+
+import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
+import { firstProject, secondProject } from "@/app/lib/imagesData";
+import ProjectList from "./projects-list";
 
 export default function Projects() {
+  const [fancyboxRef] = useFancyboxDefault();
+
   return (
     <section className="p-6 text-center min-sm:py-12 bg-background">
       <h2 className="fontHeadline">Projetos</h2>
@@ -11,28 +16,17 @@ export default function Projects() {
           <br className="hidden min-md:block" /> diálogo{" "}
           <span className="fontDisplayItalic">único</span>
         </h3>
-        <div className="grid grid-cols-1 gap-5 min-md:grid-cols-2">
-          {projectsGallery.map(({ id, thumb, alt, width, height, bg }) => (
-            <button key={id} className="grid grid-cols-6 group cursor-pointer">
-              <div
-                style={{
-                  backgroundImage: `url('${bg.url}')`,
-                }}
-                className="w-full aspect-square bg-center bg-cover row-start-1 col-span-full grayscale-100 group-hover:grayscale-100 group-focus:grayscale-100 transition-normal duration-700 min-md:grayscale-0"
-              ></div>
-              <div className="row-start-1 col-start-3 col-end-5 self-center aspect-[11/16] overflow-hidden z-10">
-                <Image
-                  className="w-full h-full object-cover group-hover:scale-105 group-focus:scale-105 transition-transform duration-700"
-                  src={thumb}
-                  width={width}
-                  height={height}
-                  alt={alt}
-                  sizes="(max-width: 768px) 100vw, 50vw"
-                />
-              </div>
-            </button>
-          ))}
-        </div>
+        <ul
+          ref={fancyboxRef}
+          className="grid grid-cols-1 gap-5 min-md:grid-cols-2"
+        >
+          <li>
+            <ProjectList project={firstProject} />
+          </li>
+          <li>
+            <ProjectList project={secondProject} />
+          </li>
+        </ul>
       </div>
     </section>
   );

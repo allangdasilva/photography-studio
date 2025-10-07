@@ -29,7 +29,7 @@ export default function Header() {
 
         {/* Logo */}
         <Link
-          className="col-start-1 col-end-3 hover:scale-95 focus:scale-95 transition-transform duration-400
+          className="col-start-1 col-end-3 hover:scale-95 focus-visible:scale-95 transition-transform duration-400
         min-sm:col-start-6 min-sm:col-end-8 min-sm:justify-self-center"
           href={"/"}
         >
@@ -69,14 +69,14 @@ export default function Header() {
           <span
             aria-hidden="true"
             className={clsx(
-              "block w-full h-[1px] bg-background origin-right group-hover:scale-x-75 group-focus:scale-x-75",
+              "block w-full h-[1px] bg-background origin-right group-hover:scale-x-75 group-focus-visible:scale-x-75",
               { "bg-textNavMobileColor": pathname !== "/" }
             )}
           ></span>
           <span
             aria-hidden="true"
             className={clsx(
-              "block w-full h-[1px] bg-background origin-left group-hover:scale-x-75 group-focus:scale-x-75",
+              "block w-full h-[1px] bg-background origin-left group-hover:scale-x-75 group-focus-visible:scale-x-75",
               { "bg-textNavMobileColor": pathname !== "/" }
             )}
           ></span>

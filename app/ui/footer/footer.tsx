@@ -14,7 +14,7 @@ export default function Footer() {
           </p>
         </div>
         <Link
-          className="hover:scale-95 focus:scale-95 transition-transform duration-400"
+          className="hover:scale-95 focus-visible:scale-95 transition-transform duration-400"
           href={"/"}
         >
           <Image

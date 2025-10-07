@@ -1,5 +1,9 @@
+"use client";
+
+import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
 import { categoriesGallery } from "@/app/lib/imagesData";
 import Image from "next/image";
+import HoverGallery from "../hover-gallery";
 
 interface CategoryContentProps {
   data: {
@@ -24,6 +28,7 @@ export default function CategoryContent({ data }: CategoryContentProps) {
   const galleryData = categoriesGallery.filter(
     (c) => c.category === data.label
   );
+  const [fancyboxRef] = useFancyboxDefault();
 
   return (
     <section className="p-6 min-sm:py-12 bg-background">
@@ -69,12 +74,15 @@ export default function CategoryContent({ data }: CategoryContentProps) {
         </div>
 
         <div className="min-lg:col-start-1 min-lg:row-start-1">
-          <ul className="grid gap-5">
+          <ul ref={fancyboxRef} className="grid gap-5">
             {galleryData.map(({ id, src, width, height, alt }) => (
               <li key={id}>
                 <button
                   type="button"
-                  className="block overflow-hidden cursor-pointer group"
+                  aria-haspopup="dialog"
+                  data-fancybox={`gallery-category-${data.label}`}
+                  data-src={src}
+                  className="relative block overflow-hidden cursor-pointer group"
                 >
                   <Image
                     className="group-hover:scale-105 group-focus:scale-105 transition-transform duration-700"
@@ -83,6 +91,7 @@ export default function CategoryContent({ data }: CategoryContentProps) {
                     height={height}
                     alt={alt}
                   />
+                  <HoverGallery />
                 </button>
               </li>
             ))}

@@ -9,6 +9,7 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "@fancyapps/ui": "^6.0.33",
     "clsx": "^2.1.1",
     "hover-effect": "^1.2.1",
     "next": "15.5.3",

@@ -15,7 +15,7 @@ export default function Testimonial() {
           <button
             aria-label="Slide anterior"
             aria-controls="testimonial"
-            className="col-start-2 col-end-3 py-4 justify-self-start cursor-pointer hover:scale-90 focus:scale-90 transition-transform duration-300"
+            className="col-start-2 col-end-3 py-4 justify-self-start cursor-pointer hover:scale-90 focus-visible:scale-90 transition-transform duration-300"
           >
             <Image
               aria-hidden="true"
@@ -37,7 +37,7 @@ export default function Testimonial() {
           <button
             aria-label="Próximo slide"
             aria-controls="testimonial"
-            className="col-start-11 col-end-12 justify-self-end py-4 cursor-pointer hover:scale-90 focus:scale-90 transition-transform duration-300"
+            className="col-start-11 col-end-12 justify-self-end py-4 cursor-pointer hover:scale-90 focus-visible:scale-90 transition-transform duration-300"
           >
             <Image
               aria-hidden="true"
