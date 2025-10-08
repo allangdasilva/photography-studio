@@ -46,6 +46,7 @@ export default function Form({ ...props }: FormProps) {
         type="submit"
       >
         <Image
+          aria-hidden="true"
           src={"/images/send-icon-white.svg"}
           width={16}
           height={16}

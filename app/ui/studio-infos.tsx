@@ -11,7 +11,6 @@ const studioInfosData = [
       src: "/images/map-icon.svg",
       width: 16,
       height: 20,
-      alt: "Mapa ícone",
     },
   },
   {
@@ -21,7 +20,6 @@ const studioInfosData = [
       src: "/images/chat-icon.svg",
       width: 16,
       height: 15,
-      alt: "Chat ícone",
     },
   },
   {
@@ -31,7 +29,6 @@ const studioInfosData = [
       src: "/images/mail-icon.svg",
       width: 16,
       height: 12,
-      alt: "Email ícone",
     },
   },
 ];
@@ -52,10 +49,11 @@ export default function StudioInfos({ ...props }: studioInfosProps) {
                   })}
                 >
                   <Image
+                    aria-hidden="true"
                     src={icon.src}
                     width={icon.width}
                     height={icon.height}
-                    alt={icon.alt}
+                    alt=""
                     className={`w-full h-auto `}
                   />
                 </div>

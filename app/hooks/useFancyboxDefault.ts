@@ -1,6 +1,5 @@
 "use client";
 
-import { Fancybox } from "@fancyapps/ui";
 import useFancybox from "./useFancybox";
 
 export default function useFancyboxDefault() {

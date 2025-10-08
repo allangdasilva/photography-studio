@@ -37,7 +37,7 @@ export default function Header() {
             src={"/images/logo-p-photography-studio-white.svg"}
             width={43}
             height={48}
-            alt={"Logo Photography Studio"}
+            alt={"Logo The Photography Studio"}
             className={clsx("dark:hidden", {
               "!hidden dark:!block": pathname !== "/",
             })}
@@ -47,7 +47,7 @@ export default function Header() {
             src={"/images/logo-p-photography-studio-black.svg"}
             width={43}
             height={48}
-            alt={"Logo Photography Studio"}
+            alt={"Logo The Photography Studio"}
             className={clsx("hidden dark:block", {
               "!block dark:!hidden": pathname !== "/",
             })}

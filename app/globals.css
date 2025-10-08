@@ -89,6 +89,17 @@ body {
   opacity: 0 !important;
 }
 
+/* Swiper */
+.swiper-pagination {
+  @apply !relative mt-8;
+}
+.swiper-pagination-bullet {
+  @apply !w-2.5 !h-2.5 border !border-primaryColor !bg-transparent !opacity-100 duration-300;
+}
+.swiper-pagination-bullet-active {
+  @apply !bg-primaryColor;
+}
+
 @layer utilities {
   /* Fonts */
   .fontNav {

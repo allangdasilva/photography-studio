@@ -94,17 +94,19 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
           href={"/"}
         >
           <Image
+            aria-hidden="true"
             src={"/images/logo-photography-studio-black.svg"}
             width={430}
             height={40}
-            alt={"Logo Photography Studio"}
+            alt=""
             className="block dark:hidden m-auto"
           />
           <Image
+            aria-hidden="true"
             src={"/images/logo-photography-studio-white.svg"}
             width={430}
             height={40}
-            alt={"Logo Photography Studio"}
+            alt=""
             className="hidden dark:block m-auto"
           />
         </Link>
