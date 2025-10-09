@@ -11,6 +11,7 @@ import { menuGallery } from "@/app/lib/imagesData";
 import useCloseMenuInfos from "@/app/hooks/useCloseMenuInfos";
 import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
 import HoverGallery from "../hover-gallery";
+import { usePathname } from "next/navigation";
 
 interface MenuInfoProps extends React.HTMLAttributes<HTMLDivElement> {
   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
@@ -20,6 +21,7 @@ interface MenuInfoProps extends React.HTMLAttributes<HTMLDivElement> {
 export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
   const menuRef = React.useRef<HTMLDivElement>(null);
   const [fancyboxRef] = useFancyboxDefault();
+  const pathname = usePathname();
 
   // tabIndex
   React.useEffect(() => {
@@ -39,7 +41,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
   }, [isOpen]);
 
   // Close MenuInfos / Click Outside / Esc keyboard
-  useCloseMenuInfos(menuRef, isOpen, () => setIsOpen(false));
+  useCloseMenuInfos(menuRef, isOpen, () => setIsOpen(false), pathname);
 
   return (
     <>
@@ -71,6 +73,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
           <div className="flex gap-6 items-center self-end">
             <span className="fontHeadline">Fechar</span>
             <Button
+              type="button"
               aria-label={"Fechar menu de informações"}
               onClick={() => setIsOpen(!isOpen)}
               className="aspect-square relative flex flex-col justify-center items-end gap-2 w-11 py-2 cursor-pointer group *:transition-transform *:duration-700"

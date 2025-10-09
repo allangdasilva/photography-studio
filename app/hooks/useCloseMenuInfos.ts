@@ -3,7 +3,8 @@ import { useEffect } from "react";
 export default function useCloseMenuInfos<T extends HTMLDivElement>(
   ref: React.RefObject<T | null>,
   isActive: boolean,
-  onClose: () => void
+  onClose: () => void,
+  pathname?: string
 ) {
   // Fechar menu-infos com outsideClick + Verificação do fancybox
   useEffect(() => {
@@ -97,4 +98,9 @@ export default function useCloseMenuInfos<T extends HTMLDivElement>(
       document.removeEventListener("keydown", handleKeyDown);
     };
   }, [isActive, ref]);
+
+  // Fechar na mudança de rota
+  useEffect(() => {
+    if (isActive) onClose();
+  }, [pathname]);
 }

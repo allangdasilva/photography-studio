@@ -57,6 +57,7 @@ export default function Header() {
 
         {/* Menu */}
         <Button
+          type="button"
           aria-label={"Abrir menu de informações"}
           aria-controls={"info-menu"}
           aria-expanded={!isOpen ? false : true}

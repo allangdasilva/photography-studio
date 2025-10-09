@@ -74,19 +74,16 @@ body {
 
 /* Fancybox */
 .fancybox__viewport {
-  padding-top: 24px;
-  padding-bottom: 16px;
+  @apply pt-6 pb-4;
 }
 .f-thumbs__viewport {
-  padding-bottom: 16px;
+  @apply pb-4;
 }
 .f-counter {
-  font-family: var(--font-nyght-serif);
-  text-shadow: none;
+  @apply font-nyghtSerif text-shadow-none;
 }
 .f--closing-opacity img {
-  transition: opacity 300ms ease !important;
-  opacity: 0 !important;
+  @apply !transition-opacity !duration-300 !opacity-0;
 }
 
 /* Swiper */

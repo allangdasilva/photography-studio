@@ -3,6 +3,7 @@ import { WorkSans, NyghtSerif } from "@/app/ui/fonts";
 import "@/app/globals.css";
 import Header from "./ui/header/header";
 import Footer from "./ui/footer/footer";
+import BackToTopButton from "./ui/back-to-top";
 
 export const metadata: Metadata = {
   title: "Photography Studio",
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Header />
         {children}
         <Footer />
+        <BackToTopButton />
       </body>
     </html>
   );

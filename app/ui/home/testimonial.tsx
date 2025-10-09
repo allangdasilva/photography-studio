@@ -73,6 +73,7 @@ export default function Testimonial() {
           {/* Buttons Wrapper */}
           <div className="absolute top-1/2 -translate-y-1/2 left-0 w-full flex justify-between min-lg:grid min-lg:grid-cols-12 min-lg:gap-5 z-[999]">
             <button
+              type="button"
               onClick={() => swiperRef.current?.slidePrev()}
               aria-label="Slide anterior"
               aria-controls="swiper-wrapper"
@@ -96,6 +97,7 @@ export default function Testimonial() {
               />
             </button>
             <button
+              type="button"
               onClick={() => swiperRef.current?.slideNext()}
               aria-label="Próximo slide"
               aria-controls="swiper-wrapper"

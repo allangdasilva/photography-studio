@@ -6,7 +6,7 @@ interface CategoriesProps {
   params: Promise<{ id: string }>;
 }
 
-export default async function Categories({ ...props }: CategoriesProps) {
+export default async function Page({ ...props }: CategoriesProps) {
   const params = await props.params;
   const id = params.id;
   const currentIndex = categoriesData.findIndex((c) => c.label === id);
