@@ -36,12 +36,14 @@ export default function Categories() {
                   ${clipPath} transition-[clip-path] duration-700`}
               ></div>
               <div className="absolute top-0 right-0 w-1/3 h-full">
-                <p
-                  style={{ color: "white" }}
-                  className="absolute bottom-6 -translate-x-1/2 fontHeadline capitalize z-20"
-                >
-                  {label}
-                </p>
+                <div className="absolute bottom-6 -translate-x-1/2 z-20 overflow-hidden">
+                  <p
+                    style={{ color: "white" }}
+                    className="fontHeadline capitalize translate-y-0 group-hover:translate-y-full group-focus-visible:translate-y-full transition-transform duration-700"
+                  >
+                    {label}
+                  </p>
+                </div>
               </div>
             </Link>
           ))}

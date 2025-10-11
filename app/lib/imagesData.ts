@@ -138,7 +138,7 @@ export const secondProject = {
       src: "/images/projetos/projeto-2-4.jpg",
       width: 2400,
       height: 3198,
-      alt: "Foto de pernas femininas com meia até a coxa e sapatilhas rosa, no estilo fashion and ballet, destacando moda moderna.",
+      alt: "Foto de uma mulher jovem com cabelo escuro, usando óculos, vestido rosa e colar de corrente.",
     },
     {
       id: 5,

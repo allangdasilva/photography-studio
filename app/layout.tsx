@@ -4,6 +4,7 @@ import "@/app/globals.css";
 import Header from "./ui/header/header";
 import Footer from "./ui/footer/footer";
 import BackToTopButton from "./ui/back-to-top";
+import Loader from "./ui/loader";
 
 export const metadata: Metadata = {
   title: "Photography Studio",
@@ -24,6 +25,7 @@ export default function RootLayout({
         {children}
         <Footer />
         <BackToTopButton />
+        <Loader />
       </body>
     </html>
   );

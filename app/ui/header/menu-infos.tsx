@@ -19,7 +19,7 @@ interface MenuInfoProps extends React.HTMLAttributes<HTMLDivElement> {
 }
 
 export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
-  const menuRef = React.useRef<HTMLDivElement>(null);
+  const menuRef = React.useRef<HTMLDivElement | null>(null);
   const [fancyboxRef] = useFancyboxDefault();
   const pathname = usePathname();
 
@@ -64,7 +64,7 @@ export default function MenuInfos({ setIsOpen, isOpen }: MenuInfoProps) {
         role="dialog"
         aria-modal={isOpen}
         className={clsx(
-          "fixed overflow-auto top-0 right-0 w-full h-screen bg-background z-50 min-sm:w-3/5 min-lg:w-2/5 transition-transform duration-700 ease-out scrollbarMenuInfos",
+          "fixed overflow-auto top-0 right-0 w-full h-screen bg-background z-50 min-sm:w-3/5 min-lg:w-2/5 transition-transform duration-700 ease-out",
           { "translate-x-full": !isOpen, "translate-x-0": isOpen }
         )}
       >

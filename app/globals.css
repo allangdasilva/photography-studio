@@ -123,22 +123,4 @@ body {
   .fontDetail {
     @apply font-workSans font-normal text-textBodyColor text-xs leading-4;
   }
-
-  /* ScrollbarMenuInfos */
-  .scrollbarMenuInfos::-webkit-scrollbar {
-    width: 8px;
-  }
-  .scrollbarMenuInfos::-webkit-scrollbar-track {
-    background: #fff;
-  }
-  .scrollbarMenuInfos::-webkit-scrollbar-thumb {
-    background-color: #888;
-  }
-  .scrollbarMenuInfos::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  .scrollbarMenuInfos {
-    scrollbar-width: thin;
-    scrollbar-color: #888 #fff;
-  }
 }
