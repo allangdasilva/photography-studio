@@ -1,7 +1,7 @@
 import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
 import Image from "next/image";
 import React from "react";
-import HoverGallery from "../hover-gallery";
+import HoverGallery from "@/app/ui/helper/hover-gallery";
 
 interface ProjectListProps extends React.HTMLAttributes<HTMLUListElement> {
   project: {
@@ -24,8 +24,10 @@ export default function ProjectList({
   return (
     <ul
       ref={fancyboxRef}
-      style={{ backgroundImage: `url('${bgUrl}')` }}
-      className="relative w-full aspect-square bg-center bg-cover grid grid-cols-6 after:w-full after:h-full after:block after:absolute after:top-0 after:left-0 after:backdrop-blur-md after:bg-black/30 has-[button:hover]:after:bg-black/0 after:transition-colors after:duration-700"
+      style={{
+        backgroundImage: `url('${bgUrl}')`,
+      }}
+      className="relative w-full aspect-square bg-[length:100%] bg-center grid grid-cols-6 after:block after:absolute after:inset-0 after:backdrop-blur-md after:bg-black/30 has-[button:hover]:bg-[length:105%] has-[button:focus-visible]:bg-[length:105%] transition-all duration-700"
     >
       {gallery.map(({ id, src, alt, width, height }, index) => (
         <React.Fragment key={id}>
@@ -39,7 +41,7 @@ export default function ProjectList({
                 className="relative aspect-[11/16] overflow-hidden cursor-pointer group"
               >
                 <Image
-                  className="w-full h-full object-cover group-hover:scale-105 group-focus-visible:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover"
                   src={src}
                   alt={alt}
                   width={width}

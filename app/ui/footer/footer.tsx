@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <footer className="p-6 pt-0 bg-background">
       <div className="max-w-[1280px] m-auto grid gap-6">
-        <hr className="border-black/15 dark:border-white/15" />
+        <hr className="border border-black/15 dark:border-white/15" />
         <div className="space-y-3 min-sm:flex min-sm:justify-between min-sm:flex-row-reverse min-sm:space-y-0">
           <SocialsFooter />
           <p className="fontBody text-center opacity-80">

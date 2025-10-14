@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { WorkSans, NyghtSerif } from "@/app/ui/fonts";
 import "@/app/globals.css";
-import Header from "./ui/header/header";
-import Footer from "./ui/footer/footer";
-import BackToTopButton from "./ui/back-to-top";
-import Loader from "./ui/loader";
+import Header from "@/app/ui/header/header";
+import Footer from "@/app/ui/footer/footer";
+import BackToTopButton from "@/app/ui/helper/back-to-top";
+import Loader from "@/app/ui/helper/loader";
 
 export const metadata: Metadata = {
   title: "Photography Studio",

@@ -9,14 +9,23 @@ import "swiper/css/navigation";
 import { Pagination, Navigation } from "swiper/modules";
 import type { Swiper as SwiperType } from "swiper";
 import { useRef } from "react";
+import clsx from "clsx";
+import useReveal from "@/app/hooks/useReveal";
 
 export default function Testimonial() {
   const swiperRef = useRef<SwiperType | null>(null);
+  const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
     <section
+      ref={ref}
       aria-labelledby="testimonial-title"
-      className="px-6 py-[52px] bg-background min-sm:py-[92px]"
+      className={clsx(
+        "px-6 py-[52px] bg-background min-sm:py-[92px] opacity-0 translate-y-16",
+        {
+          "revealEffect ": visible,
+        }
+      )}
     >
       <h2 id="testimonial-title" className="sr-only">
         Depoimentos de clientes

@@ -1,13 +1,22 @@
 "use client";
 
+import useReveal from "@/app/hooks/useReveal";
 import Form from "@/app/ui/form/form";
-import StudioInfos from "./studio-infos";
+import StudioInfos from "@/app/ui/helper/studio-infos";
+import clsx from "clsx";
 import { usePathname } from "next/navigation";
 
-export default function Contact() {
+export default function ContactContent() {
   const pathname = usePathname();
+  const { ref, visible } = useReveal<HTMLDivElement>();
+
   return (
-    <section className="bg-background">
+    <section
+      ref={ref}
+      className={clsx("bg-background opacity-0 translate-y-16", {
+        "revealEffect ": visible,
+      })}
+    >
       {pathname !== "/" && (
         <div
           style={{ backgroundImage: "url('/images/projetos/projeto-1-5.jpg')" }}

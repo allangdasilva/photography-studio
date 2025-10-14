@@ -1,6 +1,18 @@
+"use client";
+
+import useReveal from "@/app/hooks/useReveal";
+import clsx from "clsx";
+
 export default function Map() {
+  const { ref, visible } = useReveal<HTMLDivElement>();
   return (
-    <section aria-labelledby="map-title" className="px-6 pb-6">
+    <section
+      ref={ref}
+      aria-labelledby="map-title"
+      className={clsx("px-6 pb-6 opacity-0 translate-y-16", {
+        "revealEffect ": visible,
+      })}
+    >
       <div className="max-w-[1280px] m-auto">
         <h2 id="map-title" className="sr-only">
           Localização no mapa

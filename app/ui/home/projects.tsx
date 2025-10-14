@@ -1,14 +1,25 @@
 "use client";
 
 import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
+import useReveal from "@/app/hooks/useReveal";
 import { firstProject, secondProject } from "@/app/lib/imagesData";
-import ProjectList from "./projects-list";
+import ProjectList from "@/app/ui/home/projects-list";
+import clsx from "clsx";
 
 export default function Projects() {
   const [fancyboxRef] = useFancyboxDefault();
+  const { ref, visible } = useReveal<HTMLDivElement>();
 
   return (
-    <section className="p-6 text-center min-sm:py-12 bg-background">
+    <section
+      ref={ref}
+      className={clsx(
+        "p-6 text-center min-sm:py-12 bg-background opacity-0 translate-y-16",
+        {
+          "revealEffect ": visible,
+        }
+      )}
+    >
       <h2 className="fontHeadline">Projetos</h2>
       <div className="max-w-[1280px] m-auto">
         <h3 className="fontDisplay uppercase pt-3 pb-6 min-sm:pt-6 min-sm:pb-12">

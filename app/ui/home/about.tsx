@@ -1,3 +1,8 @@
+"use client";
+
+import useReveal from "@/app/hooks/useReveal";
+import clsx from "clsx";
+
 const equipment = [
   "3 Câmeras 4K",
   "Kit completo de iluminação profissional",
@@ -9,8 +14,17 @@ const equipment = [
 ];
 
 export default function About() {
+  const { ref, visible } = useReveal<HTMLDivElement>();
   return (
-    <section className="p-6 min-sm:py-12 bg-background">
+    <section
+      ref={ref}
+      className={clsx(
+        "p-6 min-sm:py-12 bg-background opacity-0 translate-y-16",
+        {
+          "revealEffect ": visible,
+        }
+      )}
+    >
       <h2 className="text-center fontHeadline">Sobre</h2>
 
       <div className="max-w-[1280px] m-auto min-lg:grid min-lg:grid-cols-12 min-sm:gap-5">

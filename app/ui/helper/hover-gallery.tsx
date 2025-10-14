@@ -2,7 +2,7 @@ export default function HoverGallery() {
   return (
     <span
       aria-hidden="true"
-      className="absolute w-full h-full top-0 left-0 flex justify-center items-center bg-black/50 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-700"
+      className="absolute inset-0 flex justify-center items-center bg-black/50 opacity-0 group-hover:opacity-100 group-focus-visible:opacity-100 transition-opacity duration-700"
     >
       <div className="w-6 h-6 overflow-hidden">
         <span

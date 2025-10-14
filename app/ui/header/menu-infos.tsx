@@ -6,11 +6,11 @@ import Link from "next/link";
 import clsx from "clsx";
 import Button from "@/app/ui/header/button-menu";
 import NavLinks from "@/app/ui/header/nav-links";
-import StudioInfos from "@/app/ui/studio-infos";
+import StudioInfos from "@/app/ui/helper/studio-infos";
 import { menuGallery } from "@/app/lib/imagesData";
 import useCloseMenuInfos from "@/app/hooks/useCloseMenuInfos";
 import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
-import HoverGallery from "../hover-gallery";
+import HoverGallery from "@/app/ui/helper/hover-gallery";
 import { usePathname } from "next/navigation";
 
 interface MenuInfoProps extends React.HTMLAttributes<HTMLDivElement> {

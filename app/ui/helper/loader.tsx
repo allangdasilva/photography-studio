@@ -2,44 +2,37 @@
 
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
 export default function Loader() {
-  // const [isVisible, setIsVisible] = useState(true);
   const pathname = usePathname();
   const wrapper1Ref = useRef<HTMLDivElement | null>(null);
   const wrapper2Ref = useRef<HTMLDivElement | null>(null);
-  const imageWhiteRef = useRef<HTMLImageElement | null>(null);
-  const imageBlackRef = useRef<HTMLImageElement | null>(null);
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
+  const logoWhiteRef = useRef<HTMLImageElement | null>(null);
+  const logoBlackRef = useRef<HTMLImageElement | null>(null);
 
   useGSAP(() => {
-    const timeline = gsap.timeline({
-      onComplete: () => {
-        gsap.set(wrapper1Ref.current, {
-          visibility: "hidden",
-        });
-      },
+    const tl = gsap.timeline();
+
+    tl.set(wrapper1Ref.current, {
+      display: "flex",
+      opacity: 1,
     });
 
-    timeline
+    tl.to(
+      wrapper2Ref.current,
+      {
+        opacity: 1,
+        duration: 1,
+        delay: 0.2,
+        ease: "power2.out",
+      },
+      0
+    )
       .to(
-        wrapper2Ref.current,
-        {
-          opacity: 1,
-          duration: 1,
-          delay: 0.2,
-          ease: "power2.out",
-        },
-        0
-      )
-      .to(
-        [imageWhiteRef.current, imageBlackRef.current],
+        [logoWhiteRef.current, logoBlackRef.current],
         {
           translateY: 0,
           duration: 1,
@@ -59,7 +52,7 @@ export default function Loader() {
         1
       )
       .to(
-        [imageWhiteRef.current, imageBlackRef.current],
+        [logoWhiteRef.current, logoBlackRef.current],
         {
           translateY: 100,
           duration: 1,
@@ -74,6 +67,7 @@ export default function Loader() {
           opacity: 0,
           duration: 1,
           ease: "power4.out",
+          display: "none",
         },
         2
       );
@@ -91,7 +85,7 @@ export default function Loader() {
       >
         <div className="w-4/5 overflow-hidden">
           <Image
-            ref={imageWhiteRef}
+            ref={logoWhiteRef}
             className="block w-full translate-y-full dark:hidden"
             src={"/images/logo-photography-studio-white.svg"}
             width={430}
@@ -99,7 +93,7 @@ export default function Loader() {
             alt=""
           />
           <Image
-            ref={imageBlackRef}
+            ref={logoBlackRef}
             className="hidden w-full translate-y-full dark:block"
             src={"/images/logo-photography-studio-black.svg"}
             width={430}

@@ -3,7 +3,7 @@
 import useFancyboxDefault from "@/app/hooks/useFancyboxDefault";
 import { categoriesGallery } from "@/app/lib/imagesData";
 import Image from "next/image";
-import HoverGallery from "../hover-gallery";
+import HoverGallery from "@/app/ui/helper/hover-gallery";
 
 interface CategoryContentProps {
   data: {
