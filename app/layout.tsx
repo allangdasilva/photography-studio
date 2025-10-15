@@ -5,6 +5,7 @@ import Header from "@/app/ui/header/header";
 import Footer from "@/app/ui/footer/footer";
 import BackToTopButton from "@/app/ui/helper/back-to-top";
 import Loader from "@/app/ui/helper/loader";
+import { Slide, ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
   title: "Photography Studio",
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body
         className={`${WorkSans.variable} ${NyghtSerif.variable} antialiased`}
       >
+        <ToastContainer transition={Slide} toastStyle={{ borderRadius: 0 }} />
         <Header />
         {children}
         <Footer />

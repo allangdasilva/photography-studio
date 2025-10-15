@@ -97,6 +97,11 @@ body {
   @apply !bg-primaryColor;
 }
 
+/* Toastify */
+.Toastify__progress-bar--wrp {
+  @apply rounded-none;
+}
+
 @layer utilities {
   /* Fonts */
   .fontNav {
@@ -124,6 +129,7 @@ body {
     @apply font-workSans font-normal text-textBodyColor text-xs leading-4;
   }
 
+  /* Reveal Components */
   .revealEffect {
     @apply translate-y-0 opacity-100 transition-all duration-700 ease-in-out;
   }

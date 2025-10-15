@@ -2,7 +2,7 @@
 
 import { useGSAP } from "@gsap/react";
 import { gsap } from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 
@@ -12,6 +12,10 @@ export default function Loader() {
   const wrapper2Ref = useRef<HTMLDivElement | null>(null);
   const logoWhiteRef = useRef<HTMLImageElement | null>(null);
   const logoBlackRef = useRef<HTMLImageElement | null>(null);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   useGSAP(() => {
     const tl = gsap.timeline();

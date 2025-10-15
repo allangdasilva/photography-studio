@@ -1,12 +1,65 @@
+"use client";
+
 import { formInputs } from "@/app/lib/formInputs";
 import Input from "./input";
 import Image from "next/image";
+import { FormEvent, useState } from "react";
+import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
+import { toast } from "react-toastify";
+import clsx from "clsx";
 
 interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
 
 export default function Form({ ...props }: FormProps) {
+  const [disabled, setDisabled] = useState(false);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    const data = Object.fromEntries(formData.entries());
+
+    const serviceID = "service_gr85usj";
+    const templateID = "template_b9oujc4";
+    const publicKEY = "3yX2moeUAL9vkTa2f";
+
+    try {
+      setDisabled(true);
+
+      await emailjs.send(
+        serviceID,
+        templateID,
+        {
+          name: data.name,
+          email: data.email,
+          tel: data.tel,
+          subject: data.subject,
+          message: data.message,
+        },
+        {
+          publicKey: publicKEY,
+        }
+      );
+
+      setDisabled(false);
+      toast.success("Email enviado com sucesso!");
+      form.reset();
+    } catch (err) {
+      setDisabled(false);
+      toast.error("Falha ao enviar email!");
+
+      if (err instanceof EmailJSResponseStatus) {
+        console.log("EMAILJS FALHOU...", err);
+        return;
+      }
+
+      console.log("ERROR", err);
+    }
+  };
+
   return (
-    <form {...props}>
+    <form method="post" id="form" onSubmit={handleSubmit} {...props}>
       {formInputs.map(({ id, type, placeholder, label, icon }) => (
         <Input
           key={id}
@@ -14,6 +67,7 @@ export default function Form({ ...props }: FormProps) {
           placeholder={placeholder}
           label={label}
           id={id}
+          name={id}
           icon={icon}
           required={true}
           maxLength={100}
@@ -41,21 +95,31 @@ export default function Form({ ...props }: FormProps) {
         ></textarea>
       </div>
 
-      <button
-        className="mt-2 py-3 px-4 flex gap-4 bg-primaryColor w-fit cursor-pointer hover:scale-95 focus:scale-95 transition-transform duration-400"
-        type="submit"
-      >
-        <Image
-          aria-hidden="true"
-          src={"/images/send-icon-white.svg"}
-          width={16}
-          height={16}
-          alt=""
-          className="object-contain"
-        />
+      <div>
+        <button
+          className={clsx(
+            "mt-2 py-3 px-4 flex gap-4 bg-primaryColor w-fit cursor-pointer hover:scale-95 focus:scale-95 transition-all duration-400",
+            {
+              "opacity-20 ": disabled,
+            }
+          )}
+          type="submit"
+          disabled={disabled}
+        >
+          <Image
+            aria-hidden="true"
+            src={"/images/send-icon-white.svg"}
+            width={16}
+            height={16}
+            alt=""
+            className="object-contain"
+          />
 
-        <span className="text-white">Enviar</span>
-      </button>
+          <span className="text-white">
+            {disabled ? "Enviando..." : "Enviar"}
+          </span>
+        </button>
+      </div>
     </form>
   );
 }
