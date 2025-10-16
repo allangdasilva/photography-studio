@@ -7,9 +7,9 @@ import { notFound } from "next/navigation";
 export async function generateMetadata({
   params,
 }: {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }): Promise<Metadata> {
-  const { id } = params;
+  const { id } = await params;
   const category = categoriesData.find((c) => c.label === id);
 
   if (!category) {
@@ -29,12 +29,8 @@ export async function generateMetadata({
   };
 }
 
-interface CategoriesProps {
-  params: { id: string };
-}
-
-export default function Page({ ...props }: CategoriesProps) {
-  const params = props.params;
+export default async function Page(props: { params: Promise<{ id: string }> }) {
+  const params = await props.params;
   const id = params.id;
   const currentIndex = categoriesData.findIndex((c) => c.label === id);
 
