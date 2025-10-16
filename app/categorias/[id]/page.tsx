@@ -30,11 +30,11 @@ export async function generateMetadata({
 }
 
 interface CategoriesProps {
-  params: Promise<{ id: string }>;
+  params: { id: string };
 }
 
-export default async function Page({ ...props }: CategoriesProps) {
-  const params = await props.params;
+export default function Page({ ...props }: CategoriesProps) {
+  const params = props.params;
   const id = params.id;
   const currentIndex = categoriesData.findIndex((c) => c.label === id);
 
