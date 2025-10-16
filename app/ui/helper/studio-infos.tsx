@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 
-interface studioInfosProps extends React.HTMLAttributes<HTMLUListElement> {}
+type studioInfosProps = React.HTMLAttributes<HTMLUListElement>;
 
 const studioInfosData = [
   {

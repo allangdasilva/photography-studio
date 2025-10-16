@@ -8,7 +8,7 @@ import emailjs, { EmailJSResponseStatus } from "@emailjs/browser";
 import { toast } from "react-toastify";
 import clsx from "clsx";
 
-interface FormProps extends React.FormHTMLAttributes<HTMLFormElement> {}
+type FormProps = React.FormHTMLAttributes<HTMLFormElement>;
 
 export default function Form({ ...props }: FormProps) {
   const [disabled, setDisabled] = useState(false);

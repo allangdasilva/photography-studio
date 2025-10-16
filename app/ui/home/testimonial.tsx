@@ -71,9 +71,9 @@ export default function Testimonial() {
               </div>
               <div className="flex flex-col items-center text-center">
                 <p className="fontBody max-w-[65ch]">{comment}</p>
-                <h4 className="fontHeadline capitalize mt-3 mb-1 min-sm:mt-4 min-sm:mb-2">
+                <h3 className="fontHeadline capitalize mt-3 mb-1 min-sm:mt-4 min-sm:mb-2">
                   {name}
-                </h4>
+                </h3>
                 <p className="fontDetail">Cliente</p>
               </div>
             </SwiperSlide>

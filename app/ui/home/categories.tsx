@@ -5,10 +5,6 @@ import { categoriesData } from "@/app/lib/categoriesData";
 import clsx from "clsx";
 import Link from "next/link";
 
-// ClipPath Categories bg
-const clipPath =
-  "[clip-path:polygon(0_0,_100%_0,_100%_100%,_0%_100%)] group-hover:[clip-path:polygon(100%_0,_100%_0,_100%_100%,_100%_100%)] group-focus-visible:[clip-path:polygon(100%_0,_100%_0,_100%_100%,_100%_100%)]";
-
 export default function Categories() {
   const { ref, visible } = useReveal<HTMLDivElement>();
   return (

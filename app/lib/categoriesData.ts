@@ -40,7 +40,7 @@ export const categoriesData = [
     description:
       "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum quasi, aliquam vero numquam consectetur accusantium magni dicta debitis totam, repellendus perspiciatis praesentium natus cupiditate adipisci accusamus omnis eveniet quia ad.",
     details: {
-      client: "A Corretora",
+      client: "LSA",
       address: "São Paulo, SP",
       local: "Edifício Palace",
       category: "Corporativo",

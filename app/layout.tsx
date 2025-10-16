@@ -8,8 +8,24 @@ import Loader from "@/app/ui/helper/loader";
 import { Slide, ToastContainer } from "react-toastify";
 
 export const metadata: Metadata = {
-  title: "Photography Studio",
-  description: "Estúdio de Fotografia",
+  title: {
+    template: "%s | The Photography Studio",
+    default: "The Photography Studio",
+  },
+  icons: {
+    icon: [
+      {
+        url: "/images/favicon-light.svg",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/images/favicon-dark.svg",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
+  },
+  description:
+    "Eleve suas memórias com The Photography Studio. Oferecemos sessões personalizadas para cada ocasião, garantindo belas imagens que duram para sempre.",
 };
 
 export default function RootLayout({

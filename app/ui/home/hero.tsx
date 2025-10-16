@@ -11,10 +11,11 @@ export default function Hero() {
   const parentRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!parentRef.current) return;
+    const wrapper = parentRef.current;
+    if (!wrapper) return;
 
-    const myAnimation = new hoverEffect({
-      parent: parentRef.current,
+    new hoverEffect({
+      parent: wrapper,
       intensity: 0.3,
       image1: "/images/moda/moda-1.jpg",
       image2: "/images/moda/moda-2.jpg",
@@ -23,7 +24,7 @@ export default function Hero() {
     });
 
     return () => {
-      if (parentRef.current) parentRef.current.innerHTML = "";
+      if (wrapper) wrapper.innerHTML = "";
     };
   }, []);
 
